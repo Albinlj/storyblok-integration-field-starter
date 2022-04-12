@@ -1,11 +1,17 @@
 <template>
-  <div class="integration-item" v-bind:class="{ 'integration-item--selected': selected }">
+  <div
+    class="integration-item"
+    v-bind:class="{ 'integration-item--selected': selected }"
+  >
     <div class="integration-item__left">
-      <img :src="item.image_url" class="integration-item__image">
+      <img
+        :src="item.MediaConversions[0].Url"
+        class="integration-item__image"
+      />
     </div>
     <div class="integration-item__right">
-      <div class="uk-form-text-label">{{item.title}}</div>
-      <div class="uk-text-muted">{{truncate(item.description)}}</div>
+      <div class="uk-form-text-label">{{ item.Name }}</div>
+      <div class="uk-text-muted">{{ truncate("description") }}</div>
     </div>
   </div>
 </template>
@@ -14,14 +20,14 @@
 export default {
   props: {
     current: Object,
-    item: Object
+    item: Object,
   },
   computed: {
     selected() {
       if (typeof this.current === "undefined" || this.current == null)
         return false;
       return this.current.id == this.item.id;
-    }
+    },
   },
   methods: {
     truncate(string) {
@@ -36,8 +42,8 @@ export default {
         Math.min(trimmed.length, trimmed.lastIndexOf(" "))
       );
       return `${trimmed}...`;
-    }
-  }
+    },
+  },
 };
 </script>
 

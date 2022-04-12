@@ -1,24 +1,18 @@
 {
-  "name": "storyblok-fieldtype",
-  "description": "A Storyblok Field-Type Plugin Project",
+  "name": "imagevault-storyblok-fieldtype",
+  "description": "A Storyblok Field-Type for ImageVault",
   "author": {
-    "name": "Storyblok",
-    "email": "it@storyblok.com",
-    "url": "https://www.storyblok.com/"
+    "name": "Alster Digital AB",
+    "email": "hi@alster.se",
+    "url": "https://www.alster.se/"
   },
   "contributors": [
     {
-      "name": "Alexander Feiglstorfer",
-      "email": "af@storyblok.com",
-      "url": "https://www.storyblok.com/"
-    },
-    {
-      "name": "Dominik Angerer",
-      "email": "da@storyblok.com",
-      "url": "https://www.storyblok.com/"
+      "name": "Albin Ljunghusen",
+      "email": "albin.ljunghusen@alster.se"
     }
   ],
-  "version": "2.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "npm run serve",
@@ -29,6 +23,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "debounce": "^1.2.0",
+    "jquery": "^3.6.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {
@@ -45,13 +40,17 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "jquery": true
     },
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-empty": "off",
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
