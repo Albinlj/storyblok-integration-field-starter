@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { sampleResponse } from "./sampleResponse";
+// import { sampleResponse } from "./sampleResponse";
 
 export default {
   props: {
@@ -24,24 +24,37 @@ export default {
     close: Function,
   },
   mounted() {
-    this.select(sampleResponse);
+    // this.select(sampleResponse);
 
-    $("#insertMedia").imageVaultInsertMedia({
+    const ivOptions = {
       imageVaultUiUrl: "https://tobii.imagevault.app",
-      publishingSource: "https://app.storyblok.com",
+      publishingSource: "https://tobii.imagevault.app",
 
+      mediaUrlBase: "https://tobii.imagevault.app",
       uiLang: "en",
-      insertMode: 1, // Allows editing image before insert
+      insertMode: 0, // Allows editing image before insert
       formatId: "1", // Always select full size image
-      onSuccess: (result) => {
-        console.log(result);
+      success: (result) => {
+        console.log("result", result);
         this.select(result.response);
+        // this.select(result.response);
       },
-      onClose: () => {
+      close: () => {
         this.close();
       },
-      // publishDetails: { text: "t", url: "url" },
-    });
+    };
+
+    // eslint-disable-next-line no-undef
+    const windowInserter = new ImageVault.InsertMediaWindow(
+      ivOptions,
+      "width=1366,height=768,resizable=yes,scrollbars"
+    );
+    windowInserter.openImageVault();
+
+    // $("#insertMedia").imageVaultInsertMedia({
+    //   ...ivOptions,
+    //   publishingSource: "https://app.storyblok.com",
+    // });
   },
 };
 </script>
