@@ -1,6 +1,4 @@
 import Plugin from './Plugin.vue'
-import "./jquery-3.1.1.min.js";
-import "./insertmedia.min.js";
 import "./insertmediawindow.min.js";
 
 if (process.env.NODE_ENV == 'development') {
