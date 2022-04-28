@@ -11,7 +11,6 @@
     </div>
     <div class="integration-item__right">
       <div class="uk-form-text-label">{{ item.Name }}</div>
-      <div class="uk-text-muted">{{ truncate("description") }}</div>
     </div>
   </div>
 </template>

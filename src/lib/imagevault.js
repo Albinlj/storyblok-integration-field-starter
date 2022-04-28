@@ -3,11 +3,12 @@ export const openImageVault = (callback) => {
 
   const ivOptions = {
     imageVaultUiUrl: ivUrl,
-    publishingSource: ivUrl,
+    publishingSource: "tobii.com",
     publishDetails: {
       text: "Tobii Web through StoryBlok",
       url: "https://www.tobii.com",
     },
+    additionalMetadataIds:"1082", //1082 is the ID for the field "AltText"
     mediaUrlBase: ivUrl,
     uiLang: "en",
     insertMode: 1, // Allows editing image before insert
