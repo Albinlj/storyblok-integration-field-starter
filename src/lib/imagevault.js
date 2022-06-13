@@ -1,3 +1,6 @@
+export const fullSizeFormatId = 1;
+export const thumbnailFormatId = 3193;
+
 export const openImageVault = (callback) => {
   const ivUrl = "https://tobii.imagevault.app";
 
@@ -8,11 +11,11 @@ export const openImageVault = (callback) => {
       text: "Tobii Web through StoryBlok",
       url: "https://www.tobii.com",
     },
-    additionalMetadataIds:"1082", //1082 is the ID for the field "AltText"
+    additionalMetadataIds: "1082", //1082 is the ID for the field "AltText"
     mediaUrlBase: ivUrl,
     uiLang: "en",
     insertMode: 1, // Allows editing image before insert
-    formatId: "1", // Always select full size image
+    formatId: [fullSizeFormatId, thumbnailFormatId],
     success: (result) => {
       callback(result.response);
     },

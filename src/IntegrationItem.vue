@@ -5,7 +5,7 @@
   >
     <div class="integration-item__left">
       <img
-        :src="item.MediaConversions[0].Url"
+        :src="item.MediaConversions.find((mc) => mc.MediaFormatId === 3193).Url"
         class="integration-item__image"
       />
     </div>
